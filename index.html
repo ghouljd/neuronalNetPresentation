@@ -8,10 +8,16 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Personalized Styles -->
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -25,8 +31,51 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h4>Aplicación de</h4>
+					<h2>Redes Neuronales en análisis espacial</h2>
+					<h3>con R</h3>
+					<p class="signature">
+						<small>Jesús Escalante</small>
+						<small>Desarrollador Front-End</small>
+						<small>Heraclea SAS</small>
+						<small class="socials"><i class="fab fa-github-square"></i><a target="_blank" href="https://github.com/ghouljd">ghouljd</a></small>
+						<small class="socials"><i class="fab fa-twitter-square"></i><a target="_blank" href="https://twitter.com/ghouljder">@ghouljder</a></small>
+					</p>
+				</section>
+				<section id="fragments">
+					<section>
+						<p class="fragment fade-in-then-semi-out">Dato</p>
+						<p class="fragment fade-in-then-semi-out">Dato Espacial</p>
+						<p class="fragment fade-in-then-semi-out">Tipos de Datos Espaciales</p>
+					</section>
+					<section data-background="img/puntos.jpg">
+						<h2>De puntos</h2>
+					</section>
+					<section data-background="img/areas.jpeg">
+						<h2>De area</h2>
+					</section>
+					<section data-background="img/geoespacial.png">
+						<h2>Geoespaciales</h2>
+					</section>
+				</section>
+				<section>
+					<h2>Análisis Espacial</h2>
+					<img src="https://media.giphy.com/media/l0JjT5dHaIaWI/giphy.gif">
+				</section>
+				<section id="fragments">
+					<h2>Red Neuronal <span style="color: blue" class="fragment fade-up">probabilistica (PNN)</span></h2>
+				</section>
+				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+					<h2>...juntos!!!</h2>
+				</section>
+				<section>
+					<h1>Corridas</h1>
+				</section>
+				<section id="fragments">
+					<h3>Indices de clasificación</h3>
+					<h2 class="fragment fade-in-then-semi-out">Indice de Moran</h2>
+				</section>
 			</div>
 		</div>
 
@@ -44,6 +93,7 @@
 					{ src: 'plugin/highlight/highlight.js', async: true }
 				]
 			});
+			Reveal.configure({ backgroundTransition: 'convex' })
 		</script>
 	</body>
 </html>
