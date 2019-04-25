@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Redes neuronales en análisis espacial</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -33,12 +33,12 @@
 			<div class="slides">
 				<section class="intro">
 					<h3>Aplicación de</h3>
-					<h2>Redes Neuronales en análisis espacial</h2>
+					<h2>Redes neuronales en análisis espacial</h2>
 					<h3>con R</h3>
 					<p class="signature">
 						<small>Jesús Escalante</small>
 						<small>Desarrollador Front-End</small>
-						<small>Heraclea SAS</small>
+						<small>Heraclea</small>
 						<small class="socials"><i class="fab fa-github-square"></i><a target="_blank" href="https://github.com/ghouljd">ghouljd</a></small>
 						<small class="socials"><i class="fab fa-twitter-square"></i><a target="_blank" href="https://twitter.com/ghouljder">@ghouljder</a></small>
 					</p>
@@ -63,14 +63,38 @@
 					<h2>Análisis Espacial</h2>
 				</section>
 				<section id="fragments">
-					<h2>Red Neuronal <span style="color: blue" class="fragment fade-up">probabilística (PNN)</span></h2>
+					<section>
+						<h2>Red Neuronal <span style="color: blue" class="fragment fade-up">probabilística (PNN)</span></h2>
+					</section>
+					<section>
+						<h2>Grupos de capas</h2>
+						<img src="img/layers.png" height="400px" width="auto">
+					</section>
+					<section>
+						<h4>Clasificación</h4>
+						<img src="img/bad-classification.png" height="400px" width="auto">
+					</section>
+					<section>
+						<h4>Clasificación</h4>
+						<img src="img/good-classification.png" height="400px" width="auto">
+					</section>
 				</section>
 				<section class="gifSection" data-background="http://i.giphy.com/90F8aUepslB84.gif">
-					<h2>...juntos!!!</h2>
+					<h2>... juntos!!!</h2>
 				</section>
 				<section>
+					<section id="fragments">
+						<h4>Y ahora ...</h4>
+						<h3 class="fragment fade-in-then-semi-out">¿cómo lo hago en <span style="color: blue">R</span>?</h3>
+						<div class="fragment">
+							<h2>pnn-package</h2>
+							<p>
+								<small><a href="https://cran.r-project.org/web/packages/pnn/">https://cran.r-project.org/web/packages/pnn/</a></small>
+							</p>
+						</div>
+					</section>
 					<section>
-						<h2>pnn-package</h2>
+						<h4>Creemos el set de datos</h4>
 						<pre>
 							<code class="javascript" data-trim contenteditable style="font-size: 18px;">
 								createSetData <- function(completeData){
@@ -89,15 +113,24 @@
 						</pre>
 					</section>
 					<section>
+						<h4>Y ahora usemos el paquete ...</h4>
 						<pre>
 							<code class="javascript" data-trim contenteditable style="font-size: 18px;">
 								splitData <-lapply(dataXDensidad, createSetData)
 								trainSet<-do.call("rbind", list(splitData[[1]]$train...))
 								testSet<-do.call("rbind", list(splitData[[1]]$test...))
-								trainedPnn <- entrenar(trainSet)
-								learnPnn <- aprender(trainedPnn)
+								trainedPnn <- learn(trainSet)
+								learnPnn <- smooth(trainedPnn, sigma=0.03)
+								estimatedPnn <- perf(learnPnn)
 							</code>
 						</pre>
+					</section>
+					<section>
+						<h4>repositorios</h4>
+						<ul>
+							<li>https://github.com/ghouljd/neuronalNetworkRPackageInvestigation/tree/master/apnnClassifier</li>
+							<li>https://github.com/ghouljd/neuronalNetworkRPackageInvestigation/tree/master/codes</li>
+						</ul>
 					</section>
 				</section>
 				<section id="fragments">
@@ -109,7 +142,10 @@
 				</section>
 				<section>
 					<h2>Gracias 🙌🏻 </h2>
-					<img src="https://media.giphy.com/media/3oEdva9BUHPIs2SkGk/giphy.gif">
+					<img src="https://media.giphy.com/media/3o752n7MfQD6tyLFq8/giphy.gif">
+					<p>
+						<small><a href="https://ghouljd.github.io/neuronalNetPresentation/">https://ghouljd.github.io/neuronalNetPresentation/</a></small>
+					</p>
 				</section>
 			</div>
 		</div>
