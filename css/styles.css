@@ -22,6 +22,8 @@
   margin-top: 50px;
 }
 
-.slide-background-content {
-  filter: opacity(.5)
+.gifSection h2{
+ position: absolute;
+ color: white !important;
+ top: -20vh;
 }

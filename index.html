@@ -49,24 +49,23 @@
 						<h3 class="fragment fade-in-then-semi-out">Dato Espacial</h3>
 						<h3 class="fragment fade-in-then-semi-out">Tipos de Datos Espaciales</h3>
 					</section>
-					<section data-background="img/waze.png">
+					<section data-background="img/waze.png" data-background-opacity="0.5">
 						<h2>De puntos</h2>
 					</section>
-					<section data-background="img/contaminacion.png">
+					<section data-background="img/contaminacion.png" data-background-opacity="0.5">
 						<h2>De área</h2>
 					</section>
-					<section data-background="img/geoespacial.png">
+					<section data-background="img/siembra2.jpg" data-background-opacity="0.5">
 						<h2>Geoespaciales</h2>
 					</section>
 				</section>
 				<section>
 					<h2>Análisis Espacial</h2>
-					<img src="https://media.giphy.com/media/l0JjT5dHaIaWI/giphy.gif">
 				</section>
 				<section id="fragments">
 					<h2>Red Neuronal <span style="color: blue" class="fragment fade-up">probabilística (PNN)</span></h2>
 				</section>
-				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+				<section class="gifSection" data-background="http://i.giphy.com/90F8aUepslB84.gif">
 					<h2>...juntos!!!</h2>
 				</section>
 				<section>
@@ -78,12 +77,12 @@
 									smp_size <- floor(0.75 * nrow(completeData))
 									set.seed(123)
 									train_ind <- sample(seq_len(nrow(completeData)), size = smp_size)
-									
+
 									train <- completeData[train_ind, ]
 									test <- completeData[-train_ind, ]
-									
+
 									result <- list("train" = train, "test" = test)
-									
+
 									return(result)
 								}
 							</code>
@@ -106,10 +105,11 @@
 					<h2 class="fragment fade-in-then-semi-out">Índice de Moran</h2>
 				</section>
 				<section>
-					<h2>Preguntas?</h2>
+					<h2>¿Preguntas?</h2>
 				</section>
 				<section>
 					<h2>Gracias 🙌🏻 </h2>
+					<img src="https://media.giphy.com/media/3oEdva9BUHPIs2SkGk/giphy.gif">
 				</section>
 			</div>
 		</div>
