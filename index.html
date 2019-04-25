@@ -45,9 +45,9 @@
 				</section>
 				<section id="fragments">
 					<section>
-						<p class="fragment fade-in-then-semi-out">Dato</p>
-						<p class="fragment fade-in-then-semi-out">Dato Espacial</p>
-						<p class="fragment fade-in-then-semi-out">Tipos de Datos Espaciales</p>
+						<h3 class="fragment fade-in-then-semi-out">Dato</h3>
+						<h3 class="fragment fade-in-then-semi-out">Dato Espacial</h3>
+						<h3 class="fragment fade-in-then-semi-out">Tipos de Datos Espaciales</h3>
 					</section>
 					<section data-background="img/puntos.jpg">
 						<h2>De puntos</h2>
@@ -70,7 +70,36 @@
 					<h2>...juntos!!!</h2>
 				</section>
 				<section>
-					<h1>Corridas</h1>
+					<section>
+						<h2>pnn-package</h2>
+						<pre>
+							<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+								createSetData <- function(completeData){
+									smp_size <- floor(0.75 * nrow(completeData))
+									set.seed(123)
+									train_ind <- sample(seq_len(nrow(completeData)), size = smp_size)
+									
+									train <- completeData[train_ind, ]
+									test <- completeData[-train_ind, ]
+									
+									result <- list("train" = train, "test" = test)
+									
+									return(result)
+								}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre>
+							<code class="javascript" data-trim contenteditable style="font-size: 18px;">
+								splitData <-lapply(dataXDensidad, createSetData)
+								trainSet<-do.call("rbind", list(splitData[[1]]$train...))
+								testSet<-do.call("rbind", list(splitData[[1]]$test...))
+								trainedPnn <- entrenar(trainSet)
+								learnPnn <- aprender(trainedPnn)
+							</code>
+						</pre>
+					</section>
 				</section>
 				<section id="fragments">
 					<h3>Indices de clasificación</h3>
