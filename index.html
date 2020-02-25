@@ -32,13 +32,11 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="intro">
-					<h3>Aplicación de</h3>
 					<h2>Redes neuronales en análisis espacial</h2>
-					<h3>con R</h3>
 					<p class="signature">
 						<small>Jesús Escalante</small>
 						<small>Desarrollador Front-End</small>
-						<small>Heraclea</small>
+						<small>S4N</small>
 						<small class="socials"><i class="fab fa-github-square"></i><a target="_blank" href="https://github.com/ghouljd">ghouljd</a></small>
 						<small class="socials"><i class="fab fa-twitter-square"></i><a target="_blank" href="https://twitter.com/ghouljder">@ghouljder</a></small>
 					</p>
@@ -81,54 +79,6 @@
 				</section>
 				<section class="gifSection" data-background="http://i.giphy.com/90F8aUepslB84.gif">
 					<h2>... juntos!!!</h2>
-				</section>
-				<section>
-					<section id="fragments">
-						<h4>Y ahora ...</h4>
-						<h3 class="fragment fade-in-then-semi-out">¿cómo lo hago en <span style="color: blue">R</span>?</h3>
-						<div class="fragment">
-							<h2>pnn-package</h2>
-							<p>
-								<small><a href="https://cran.r-project.org/web/packages/pnn/">https://cran.r-project.org/web/packages/pnn/</a></small>
-							</p>
-						</div>
-					</section>
-					<section>
-						<h4>Creemos el set de datos</h4>
-						<pre>
-							<code class="javascript" data-trim contenteditable style="font-size: 18px;">
-								createSetData <- function(completeData){
-									smp_size <- floor(0.75 * nrow(completeData))
-									set.seed(123)
-									train_ind <- sample(seq_len(nrow(completeData)), size = smp_size)
-
-									train <- completeData[train_ind, ]
-									test <- completeData[-train_ind, ]
-
-									result <- list("train" = train, "test" = test)
-
-									return(result)
-								}
-							</code>
-						</pre>
-					</section>
-					<section>
-						<h4>Y ahora usemos el paquete ...</h4>
-						<pre>
-							<code class="javascript" data-trim contenteditable style="font-size: 18px;">
-								splitData <-lapply(dataXDensidad, createSetData)
-								trainSet<-do.call("rbind", list(splitData[[1]]$train...))
-								testSet<-do.call("rbind", list(splitData[[1]]$test...))
-								trainedPnn <- learn(trainSet)
-								learnPnn <- smooth(trainedPnn, sigma=0.03)
-								estimatedPnn <- perf(learnPnn)
-							</code>
-						</pre>
-					</section>
-					<section>
-						<h4>repositorio</h4>
-						<p><small><a href="https://github.com/ghouljd/neuronalNetworkRPackageInvestigation">https://github.com/ghouljd/neuronalNetworkRPackageInvestigation</a></small></p>
-					</section>
 				</section>
 				<section id="fragments">
 					<h3>Índices de clasificación</h3>
